@@ -90,30 +90,30 @@ int main(int argc, char **argv)
 
 		case '?':
 			if (optopt == 'o')
-				fprintf(stderr, "-%c needs an argument\n",
+				fprintf(stderr, "-%c precisa de um argumento\n",
 					optopt);
 			else if (isprint(optopt))
-				fprintf(stderr, "Invalid option: -%c\n",
+				fprintf(stderr, "Opção invalida: -%c\n",
 					optopt);
 			else
 				fprintf(stderr,
-					"Error parsing cmdline arguments given\n");
+					"Erro ao analisar os argumentos cmdline fornecidos\n");
 			return 1;
 		}
 	}		
 
 	if (!iFlag) {
 		fprintf(stderr,
-			"Error: must specify your unique identifier with -i flag and \
+			"Erro: deve especificar seu identificador exclusivo com o sinalizador -i e \
 			optarg\n");
 	} else if (jFlag && bFlag) {
 		fprintf(stderr,
-			"Error: cannot use both -j and -b simultaneously\n");
+			"Erro: não é possível usar -j e -b simultaneamente\n");
 		return 1;
 	} else if (bFlag && (!xFlag || !yFlag)) {
 		fprintf(stderr,
-			"Error: cannot use -b without specifying both the -x and -y \
-			argument and their optargs\n");
+			"Erro: não é possível usar -b sem especificar -x e -y \
+			argumento e suas escolhas\n");
 	}
 	// fim do loop while para analisar os argumentos da linha de comando
 	// ----------------------------------------------------------------
