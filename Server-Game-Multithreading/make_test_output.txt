@@ -1,0 +1,56 @@
+./battleship_server &
+./battleship_client -i LUKS -j -x 3 -y 9
+./battleship_client -i GUI -j -x 6 -y 10
+./battleship_client -i LUKS -b -x 3 -y 1
+./battleship_client -i GUI -b -x 4 -y 9
+./battleship_client -i MARK -j -x 4 -y 3
+./battleship_client -i MARK -b -x 5 -y 10
+./battleship_client -i LUKS -b -x 4 -y 1
+./battleship_client -i MARK -b -x 2 -y 9
+./battleship_client -i GUI -b -x 3 -y 9
+./battleship_client -i MARK -b -x 6 -y 1
+./battleship_client -i GUI -b -x 4 -y 3
+killall -s SIGINT battleship_server 2>/dev/null || true
+listening on ./srv_socket
+cat ./battleship_server.log
+Sun Feb 14 08:54:37 2021
+	: => Began listening on ./srv_socket for incoming client connections.
+Sun Feb 14 08:54:37 2021
+	: => LUKS joined the game. His ship is located at x = 3 and y = 9.
+Sun Feb 14 08:54:37 2021
+	: => GUI joined the game. His ship is located at x = 6 and y = 0.
+Sun Feb 14 08:54:37 2021
+	: => The game now has reached the two player minimum. Its status is now active.
+Sun Feb 14 08:54:37 2021
+	: => It's LUKS's turn and he bombed GUI with values x = 3 and y = 1.
+Sun Feb 14 08:54:37 2021
+	: => LUKS missed GUI. It's now GUI's turn.
+Sun Feb 14 08:54:37 2021
+	: => It's GUI's turn and he bombed LUKS with values x = 4 and y = 9.
+Sun Feb 14 08:54:37 2021
+	: => GUI missed LUKS. It's now LUKS's turn.
+Sun Feb 14 08:54:38 2021
+	: => MARK joined the game. His ship is located at x = 4 and y = 3.
+Sun Feb 14 08:54:38 2021
+	:=> MARK attempted to take a turn, but it is not his turn.
+Sun Feb 14 08:54:38 2021
+	: => It's LUKS's turn and he bombed MARK with values x = 4 and y = 1.
+Sun Feb 14 08:54:38 2021
+	: => LUKS missed MARK. It's now MARK's turn.
+Sun Feb 14 08:54:38 2021
+	: => It's MARK's turn and he bombed GUI with values x = 2 and y = 9.
+Sun Feb 14 08:54:38 2021
+	: => MARK missed GUI. It's now GUI's turn.
+Sun Feb 14 08:54:38 2021
+	: => It's GUI's turn and he bombed LUCAS with values x = 3 and y = 9.
+Sun Feb 14 08:54:38 2021
+	: => GUI hit LUKS's ship! LUKS is now out of the game. GUI is now firing at MARK, and it is now MARK's turn.
+Sun Feb 14 08:54:38 2021
+	: => It's MARK's turn and he bombed GUI with values x = 6 and y = 1.
+Sun Feb 14 08:54:38 2021
+	: => MARK missed GUI. It's now GUI's turn.
+Sun Feb 14 08:54:38 2021
+	: => It's GUI's turn and he bombed MARK with values x = 4 and y = 3.
+Sun Feb 14 08:54:38 2021
+	: => GUI hit MARK's ship! GUI wins the game as he is the only remaining survivor! Waiting for more challengers...
+SIGINT signal encountered, exiting gracefully...
